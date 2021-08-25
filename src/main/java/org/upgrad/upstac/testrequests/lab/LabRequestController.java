@@ -58,7 +58,7 @@ public class LabRequestController {
 
     }
 
-    @GetMapping("/for-tester")
+    @GetMapping
     @PreAuthorize("hasAnyRole('TESTER')")
     public List<TestRequest> getForTester()  {
         // finds the requests assigned to tester and return

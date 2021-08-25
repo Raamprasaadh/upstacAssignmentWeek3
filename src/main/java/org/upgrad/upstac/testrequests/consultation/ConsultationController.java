@@ -30,9 +30,6 @@ public class ConsultationController {
 
     Logger log = LoggerFactory.getLogger(ConsultationController.class);
 
-
-
-
     @Autowired
     private TestRequestUpdateService testRequestUpdateService;
 
@@ -55,7 +52,7 @@ public class ConsultationController {
         return testRequestQueryService.findBy(RequestStatus.LAB_TEST_COMPLETED);
     }
 
-    @GetMapping("/get-for-doctor")
+    @GetMapping
     @PreAuthorize("hasAnyRole('DOCTOR')")
     public List<TestRequest> getForDoctor()  {
         //find requests assigned to doctor
